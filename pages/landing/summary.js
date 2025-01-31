@@ -1,7 +1,7 @@
 class PostSummary extends HTMLElement {
 
     static get observedAttributes() {
-        return ["title", "preview", "body", "date", "collapsed"];
+        return ["title", "preview", "body", "date", "collapsed", "image-description"];
     }
 
     constructor() {
@@ -9,13 +9,16 @@ class PostSummary extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="/pages/landing/summary.css"/>
-            <div id="summary-card" class="collapsible" style="background-color: purple">
+            <div id="summary-card" class="collapsible">
                 <div id="summary-text">
-                    <p id="date" style="background-color: orange">Loading...</p>
-                    <h1 id="title" style="background-color: yellow">Loading...</h1>
-                    <p id="preview" style="background-color: orange">Loading...</p>         
+                    <p id="date">Loading...</p>
+                    <h1 id="title">Loading...</h1>
+                    <p id="preview">Loading...</p>         
                 </div>
-                <img id="image" src="https://picsum.photos/200/300" alt="Image"/>
+                <div class="center-aligned">
+                    <img id="image" src="https://picsum.photos/200/300" alt="Image"/>
+                    <p id="image-description">...</p>
+                </div>
             </div>
         `;
         //         this.addEventListener("click", () => this.openDetail());
@@ -25,6 +28,8 @@ class PostSummary extends HTMLElement {
         if (name === "collapsed") {
             this.shadowRoot.querySelector(`#summary-card`).setAttribute(name, newValue);
             return
+        } else if (name === "image-description") {
+            this.shadowRoot.querySelector(`#image`).setAttribute("alt", newValue);
         }
         this.shadowRoot.querySelector(`#${name}`).textContent = newValue;
     }

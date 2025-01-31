@@ -7,16 +7,14 @@ class Footer extends HTMLElement {
 
     connectedCallback() {
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="/components/navbar.css"/>
-            <nav class="x-flex-container" style="padding: 10px;">
-                <div>Title</div>
-                <div class="x-flex-container" style="background-color: blue; gap: 10px;">
-                    <div>About</div>
-                    <div>Blog</div>
-                    <div>Tags</div>
-                    <div>Icon</div>
+            <link rel="stylesheet" href="/components/footer.css"/>
+            <div class="x-flex-container">
+                <p>© 2025 Burro Inc</p>
+                <div class="x-flex-container">
+                    <a href=""><p>Privacy Policy</p></a>
+                    <a href=""><p>Terms and Conditions</p></a>
                 </div>
-            </nav>
+            </div>
         `
     }
 

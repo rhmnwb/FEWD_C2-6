@@ -42,6 +42,7 @@ class LandingPage extends HTMLElement {
                 summary.setAttribute("title", post.title);
                 summary.setAttribute("preview", post.body.substring(0, 50) + "...");
                 //summary.setAttribute("body", post.body);
+                summary.setAttribute("image-description", post.body.substring(0, 20));
                 summary.setAttribute("collapsed", i > 0 ? "true" : "false");
                 postList.appendChild(summary);
             });

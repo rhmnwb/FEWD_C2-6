@@ -9,12 +9,11 @@ class NavBar extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="/components/navbar.css"/>
             <nav class="x-flex-container" style="padding: 10px;">
-                <div>Title</div>
-                <div class="x-flex-container" style="background-color: blue; gap: 10px;">
-                    <div>About</div>
-                    <div>Blog</div>
-                    <div>Tags</div>
-                    <div>Icon</div>
+                <h3>Burro</h3>
+                <div class="x-flex-container">
+                    <a href=""><h5>About</h5></a>
+                    <a href=""><h5>Contact</h5></a>
+                    <img class="small-icon" src="/static/images/donkey.png" alt="Icon">
                 </div>
             </nav>
         `

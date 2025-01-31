@@ -1,7 +1,6 @@
 .y-flex-container {
     display: flex;
     flex-direction: column;
-    background-color: green;
 }
 
 .y-flex-container #test {
