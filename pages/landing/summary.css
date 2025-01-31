@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#date {
+    color: gray;
+    font-size: 0.5em;
+}
+
+/* Style the first child as block */
+.collapsible[collapsed="true"] #title {
+    font-size: 1em;
+}
+
+/* Style the first child as block */
+.collapsible[collapsed="false"] #date {
+    display: none;
+}
+
+/* Style the first child as block */
+.collapsible[collapsed="true"] #preview {
+    display: none;
+}
+
+/* Style the first child as block */
+.collapsible[collapsed="false"] {
+    display: block;
+}
+
+.collapsible[collapsed="true"] {
+    display: flex;
+    gap: 10px;                   /* Optional: Spacing between items */
+    justify-content: space-between;
+}
+
+
+#summary-text {
+    background-color: blue;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.collapsible[collapsed="false"] img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 300px;
+    border-radius: 10px;
+}
+
+.collapsible[collapsed="true"] img {
+    display: block;
+    height: auto;
+    width: 30%;
+    max-height: 50px;
+    border-radius: 10px;
+}
