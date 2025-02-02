@@ -83,8 +83,8 @@ h1 {
 }
 
 .collapsible[collapsed="true"] img {
-    width: 50px; /* Fixed width for consistent dimensions */
-    height: 50px; /* Fixed height for consistent dimensions */
+    width: 150px; /* Fixed width for consistent dimensions */
+    height: 100px; /* Fixed height for consistent dimensions */
     object-fit: cover; /* Maintain aspect ratio while filling the space */
     border-radius: 10px; /* Optional: Rounded edges for styling */
 }
