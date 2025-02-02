@@ -54,12 +54,6 @@ h1 {
     padding-bottom: 4em;
 }
 
-.collapsible[collapsed="true"] {
-    display: flex;
-    gap: 10px;                   /* Optional: Spacing between items */
-    justify-content: space-between;
-}
-
 #summary-text {
     margin-left: 2em;
     margin-right: 2em;
@@ -74,10 +68,23 @@ h1 {
     border-radius: 10px;
 }
 
+.collapsible[collapsed="true"] {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Text takes flexible space, image is fixed */
+    align-items: center; /* Vertically align text and image */
+    box-sizing: border-box; /* Ensures padding counts in container size */
+    overflow: hidden; /* Prevents any content overflow */
+}
+
+.collapsible[collapsed="true"] #summary-text {
+    overflow: hidden; /* Prevent text overflow */
+    text-overflow: ellipsis; /* Show "..." for truncated text */
+    white-space: nowrap; /* Keep text on a single line */
+}
+
 .collapsible[collapsed="true"] img {
-    display: block;
-    height: auto;
-    width: 30%;
-    max-height: 50px;
-    border-radius: 10px;
+    width: 50px; /* Fixed width for consistent dimensions */
+    height: 50px; /* Fixed height for consistent dimensions */
+    object-fit: cover; /* Maintain aspect ratio while filling the space */
+    border-radius: 10px; /* Optional: Rounded edges for styling */
 }

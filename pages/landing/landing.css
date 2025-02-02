@@ -2,7 +2,3 @@
     display: flex;
     flex-direction: column;
 }
-
-.y-flex-container #test {
-    margin-top: 10em;
-}
